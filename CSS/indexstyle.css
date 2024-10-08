@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Jost', sans-serif;
+    font-weight: bold;
+    background-color: #1D71D3;
+    color: white;
+    line-height: 1.6;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1D71D3;
+}
+
+.nav-logo {
+    width: 25px;
+    height: auto;
+    margin-right: 7px;
+    vertical-align: -3px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    font-family: 'Jost', sans-serif;
+    font-weight: bold;
+    color: #1D71D3;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 20px;
+}
+nav a:hover {
+    text-decoration: underline;
+  }
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.sign-up {
+    font-family: 'Jost', sans-serif;
+    font-weight: bold;
+    background-color: white;
+    color: #1D71D3;
+    border: 2px solid #1D71D3;
+    border-radius: 5px;
+}
+
+.sign-in {
+    font-family: 'Jost', sans-serif;
+    font-weight: bold;
+    background-color: #1D71D3;
+    color: white;
+    border-radius: 5px;
+}
+
+main {
+    padding: 50px;
+}
+
+.hero {
+    text-align: left;
+}
+
+.hero h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: #f1f1f1;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.hero h2 {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.devices {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0px;
+    margin-top: -360px;
+    margin-left: auto;
+    margin-right: -50px;
+}
+
+.device {
+    max-width: 100%;
+    height: auto;
+}
+
+.phone {
+    width: 150px;
+}
+
+.tablet {
+    width: 450px;
+}
+
+/* Responsiveness for iPhone 14 Pro Max */
+@media (max-width: 414px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .logo span {
+        font-size: 22px;
+    }
+
+    nav {
+        width: 100%;
+        max-width: 430px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    nav ul {
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+        padding: 0;
+        align-items: center;
+        width: auto;
+    }
+
+    nav ul li a {
+        padding: 10px;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .auth-buttons {
+        justify-content: center;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .auth-buttons button {
+        width: 100%;
+        margin: 0 5px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero h2 {
+        font-size: 22px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .devices {
+        flex-direction: column;
+        margin-top: 20px;
+        align-items: center;
+    }
+
+    .phone, .tablet {
+        display: none;
+    }
+}
