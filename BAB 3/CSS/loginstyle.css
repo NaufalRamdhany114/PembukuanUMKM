@@ -1,0 +1,285 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Jost', sans-serif;
+    font-weight: bold;
+    background-color: #f5f5f5;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px;
+}
+
+.logo {
+    margin-left: 310px;
+    margin-top: -40px;
+}
+
+.container {
+    display: flex;
+    width: 900px;
+    height: 500px;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.left-panel {
+    background: linear-gradient(135deg, #00bfa6, #00d3ff);
+    color: #fff;
+    width: 50%;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.left-panel h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.left-panel p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.left-panel .signup-btn {
+    padding: 12px 40px;
+    border: 2px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.left-panel .signup-btn:hover {
+    background-color: #fff;
+    color: #00bfa6;
+}
+
+.right-panel {
+    width: 50%;
+    padding: 50px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.signin-form {
+    max-width: 300px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.signin-form h1 {
+    text-align: center;
+    color: #4a90e2;
+    margin-bottom: 10px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 7px;
+}
+
+.social-icons a img {
+    width: 32px;
+}
+
+.signin-form p {
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #999;
+    text-align: center;
+}
+
+.input-field {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.input-field label {
+    font-size: 13px;
+    color: #000000;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s;
+    text-align: left;
+}
+
+.input-field input:focus {
+    border-color: #4a90e2;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.forgot-password {
+    text-align: right;
+    margin-bottom: 15px;
+}
+
+.forgot-password a {
+    color: #4a90e2;
+    text-decoration: none;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+.signin-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #4a90e2;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.signin-btn:hover {
+    background-color: #357ab8;
+}
+
+.divider {
+    margin: 12px 0;
+    text-align: center;
+    position: relative;
+}
+
+.divider span {
+    background-color: #fff;
+    padding: 0 10px;
+    color: #999;
+}
+
+.divider::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    border-top: 1px solid #ccc;
+    width: 100%;
+    z-index: -1;
+}
+
+.google-btn {
+    font-weight: bold;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: border-color 0.3s;
+    margin: 0 auto;
+}
+
+.google-btn img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.google-btn:hover {
+    border-color: #4a90e2;
+}
+
+/* Media Query untuk layar dengan lebar maks 414px */
+@media (max-width: 414px) {
+    .container {
+        flex-direction: column; /* Mengubah arah flex menjadi kolom */
+        width: 100%; /* Memastikan lebar penuh */
+        height: auto; /* Menyesuaikan tinggi */
+    }
+
+    .left-panel, .right-panel {
+        width: 100%; /* Panel menjadi lebar penuh */
+        padding: 20px; /* Mengurangi padding */
+    }
+
+    .left-panel h2 {
+        font-size: 24px; /* Mengurangi ukuran font */
+    }
+
+    .left-panel p {
+        font-size: 16px; /* Mengurangi ukuran font */
+    }
+
+    .left-panel .signup-btn {
+        padding: 10px 30px; /* Mengurangi padding */
+        font-size: 14px; /* Mengurangi ukuran font */
+    }
+
+    .right-panel {
+        padding: 20px; /* Mengurangi padding */
+    }
+
+    .signin-form h1 {
+        font-size: 24px; /* Mengurangi ukuran font */
+    }
+
+    .input-field input {
+        padding: 10px; /* Mengurangi padding */
+        font-size: 12px; /* Mengurangi ukuran font */
+    }
+
+    .signin-btn {
+        padding: 10px; /* Mengurangi padding */
+        font-size: 14px; /* Mengurangi ukuran font */
+    }
+
+    .google-btn {
+        padding: 10px; /* Mengurangi padding */
+        font-size: 14px; /* Mengurangi ukuran font */
+    }
+
+    .divider span {
+        font-size: 12px; /* Mengurangi ukuran font */
+    }
+
+    .social-icons a img {
+        width: 24px; /* Mengurangi ukuran ikon sosial */
+    }
+    .logo {margin-top: -10px;
+
+    }
+}
