@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BizBalance</title>
+    <link rel="stylesheet" href="css/indexstyle.css?v=1.0">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const signUpButton = document.querySelector('.sign-up');
+            signUpButton.addEventListener('click', () => {
+                console.log('Sign Up button clicked');
+            });
+            const signInButton = document.querySelector('.sign-in');
+            signInButton.addEventListener('click', () => {
+                console.log('Sign In button clicked');
+            });
+            const heroHeading = document.querySelector('.hero h1');
+            console.log('Original Hero Heading:', heroHeading.textContent);
+            const highlights = document.querySelectorAll('.highlight');
+            highlights.forEach(highlight => {
+                highlight.addEventListener('mouseover', () => {
+                    console.log('Mouse over highlight:', highlight.textContent);
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="Gambar/logo.png" alt="BizBalance Logo">
+            <span>BizBalance</span>
+        </div>
+        <div class="auth-buttons">
+            <a href="Register.php"><button class="sign-up">Sign Up</button></a>
+            <a href="Login.php"><button class="sign-in">Sign In</button></a>
+        </div>  
+    </header>
+    <main>
+        <section class="hero">
+            <h1>
+                Laporan Keuangan <span class="highlight">Akurat</span>,<br>
+                Keputusan Bisnis <span class="highlight">Tepat</span>.<br>
+                Arus Kas <span class="highlight">Lancar</span>,<br>
+                Bisnis Makin <span class="highlight">Kuat</span>.
+            </h1>
+            <p>
+                Cara mencatat keuangan kita sekarang masih manual, <br>seringkali telat, dan kadang-kadang salah hitung.
+            </p>
+            <h2>#BizBalance-inAja</h2>
+            <div class="devices">
+                <img src="Gambar/hp.png" alt="Phone" class="device phone">
+                <img src="Gambar/tablet.png" alt="Tablet" class="device tablet">
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 BizBalance. All Rights Reserved.</p>
+    </footer>
+</body>
+    </html>
