@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: 'Jost', sans-serif;
   font-weight: bold;
@@ -16,7 +17,9 @@ header {
   justify-content: space-between;
   align-items: center;
   background-color: white;
-  padding: 20px;
+  padding: 17px;
+  top: 0;
+  z-index: 1000;
 }
 
 .logo {
@@ -38,7 +41,7 @@ header {
 nav ul {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 30px;
 }
 
 nav ul li a {
@@ -49,6 +52,7 @@ nav ul li a {
   font-size: 18px;
   padding: 20px;
 }
+
 nav a:hover {
   text-decoration: underline;
 }
@@ -71,48 +75,373 @@ nav a:hover {
 
 .dashboard {
   text-align: center;
-  margin: 40px 0;
+  margin: 20px 0;
 }
 
 .dashboard h1 {
   font-size: 28px;
 }
 
-.kartu-container {
+
+main {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  margin: 40px 0;
-  flex-wrap: wrap; 
+  align-items: center;
+  height: calc(80vh - 100px);
+  margin-top: 100px;
 }
 
-.kartu {
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 200px; 
-  height: 300px; 
+.riwayat {
+  display: table;
+  margin: auto;
+  width: 90%;
+}
+
+.riwayat table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: auto;
+}
+
+.riwayat table,
+.riwayat th,
+.riwayat td {
+  border: 1px solid black;
+  color: #000000;
+}
+
+.riwayat th {
+  padding: 13px;
   text-align: center;
-  display: flex; 
-  flex-direction: column; 
-  justify-content: space-between; 
-  padding: 20px; 
+  background-color: aquamarine;
 }
 
-.kartu h2 {
-  font-size: 18px;
+.riwayat td {
+  padding: 13px;
+  text-align: center;
+  background-color: white;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  text-align: center;
+}
+
+.edit-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.edit-button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+#delete-button {
+  background-color: #f44336;
+  color: white;
+  padding: 12.5px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#delete-button:hover {
+  background-color: #d32f2f;
+  transform: scale(1.05);
+}
+
+.delete-button:focus {
+  outline: none;
+}
+.detail-button {
+  display: inline-block; 
+  background-color: #1D71D3;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.2s; 
+}
+
+.detail-button:hover {
+  background-color: #135F99; 
+  transform: scale(1.05); 
+}
+
+.form-container {
+  background-color: #FFFFFF;
+  padding: 20px;
+  border-radius: 10px;
+  width: 650px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: -50px;
+}
+.tambah-data-container {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.tambah-data-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4DFF4D;
+  color: #000;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.tambah-data-button:hover {
+  background-color: #01e001
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 30px;
+  margin-top: 10px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button[type="submit"] {
+  font-weight: bold;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 24px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.cancel-button {
+  background-color: #f44336;
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 14px;
+  display: inline-block;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.cancel-button:hover {
+  background-color: #d32f2f;
+  transform: scale(1.05);
+}
+
+h2 {
+  color: #000;
+  text-align: center;
   margin-bottom: 20px;
 }
 
-.chart {
-  height: 200px;
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+label {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: black;
+  align-self: flex-start;
+  padding-left: 32px;
+}
+
+input {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 2px solid black;
+  border-radius: 5px;
+  width: 90%;
+}
+
+#button {
+  background-color: #1D71D3;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
   margin: 0 auto;
   display: block;
 }
 
-footer {
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #000;
+  text-align: center;
+  border-radius: 5px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+#snackbar.success {
+  background-color: #4DFF4D;
+}
+
+#snackbar.error {
+  background-color: red;
+}
+.report-container {
+  background-color: #f9f9f9; 
+  padding: 20px;
+  border-radius: 10px;
+  width: 650px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top:50px;
+  font-family: Arial, sans-serif;
+}
+
+.report-form {
+  display: grid;
+  grid-template-columns: 1fr 2fr; 
+  gap: 15px 20px; 
+}
+
+.report-form label {
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+  margin-top: auto; 
+  margin-bottom: 25px;
+}
+
+.report-buttons {
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.report-buttons button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.report-buttons button:hover {
+  background-color: #45a049;
+  transform: scale(1.05); 
+}
+
+.report-buttons .report-cancel-button {
+  border-radius: 5px;
+  background-color: #f44336;
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px;
+  margin-left: 15px;
+}
+
+.report-buttons .report-cancel-button:hover {
+  background-color: #d32f2f;
+  transform: scale(1.05);
+}
+#chartContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  padding: 10px;
+  max-width: 40%;
+  background-color: #f9f9f9; 
+  border: 1px solid #ddd;    
+  border-radius: 10px;       
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+#barChart {
+  max-width: 100%;
+  height: auto;
+}
+
+.chart-title {
+  padding: 5px;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+
+.footer-riwayat,
+.footer-dashboard {
   font-family: 'Jost', sans-serif;
-  margin-top: 40px;
+  margin-top: 50px;
+  text-align: center;
+  font-weight: bold;
+  color: #000000;
+}
+
+.footer-laporan {
+  font-family: 'Jost', sans-serif;
+  margin-top: 20px;
   text-align: center;
   font-weight: bold;
   color: #000000;
@@ -120,6 +449,8 @@ footer {
 
 @media (max-width: 414px) {
   header {
+    width: 420px;
+    max-width: 420px;
     flex-direction: column;
     align-items: center;
     padding: 10px;
@@ -131,7 +462,7 @@ footer {
 
   nav {
     width: 100%;
-    max-width: 430px;
+    max-width: 414px;
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -140,45 +471,226 @@ footer {
   }
 
   nav ul {
+    display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 10px;
+    gap: 25px;
     padding: 0;
     align-items: center;
-    width: auto;
+  }
+
+  nav ul li {
+    list-style: none;
   }
 
   nav ul li a {
-    padding: 10px;
-    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    padding-right: 5px;
+    font-size: 15px;
     text-align: center;
+    color: #1D71D3;
+    text-decoration: none;
+  }
+
+  .nav-logo {
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin-bottom: 5px;
   }
 
   .profil {
     justify-content: center;
     width: 30%;
-    margin-top: 10px;
+    margin: 10px;
     text-align: center;
   }
 
+  #chartContainer {
+    max-width: 90%; 
+    padding: 15px; 
+  }
+
+  .chart-title {
+    font-size: 16px; 
+    padding: 10px; 
+  }
+
+  #barChart {
+    height: auto;
+    max-width: 100%; 
+  }
+  .form-container {
+    margin-top: 0px;
+    width: 100%;
+    padding: 30px;
+    box-shadow: none;
+    margin-bottom: 150px;
+    width: 90%;
+  }
+
+  .form-container label {
+    margin-left: -15px;
+    font-weight: bold;
+  }
+
+  input {
+    padding: 8px;
+  }
+
+  button {
+    width: 100%;
+  }
+
   .dashboard h1 {
-    font-size: 22px;
+    font-size: 1.05em;
+  }
+
+  .dashboard {
+    padding: 0px 30px;
+    font-size: 1.1em;
   }
 
   .kartu-container {
-    flex-direction: column; /* Susun kartu menjadi satu kolom di layar kecil */
+    flex-direction: column;
     align-items: center;
-    gap: 10px; /* Kurangi jarak antar kartu */
-    margin: 10px 0;
+    margin-top: 10px;
   }
 
-  .kartu {
-    width: 90%; 
-    height: 300px; 
-    margin-bottom: 5px; 
+  .riwayat {
+    font-size: 14px;
+    width: 90%;
   }
 
-  footer {
+  .riwayat th,
+  .riwayat td {
+    padding: 3.4px;
+    font-size: 0.70em;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .action-buttons button {
+    max-width: 100%;
+  }
+
+  .edit-button {
+    padding: 8px;
+  }
+
+  #delete-button {
+    font-size: 90%;
+    padding: 11px;
+  }
+  .report-container {
+    background-color: #f9f9f9; 
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%; 
+    max-width: 650px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .report-form {
+    display: grid;
+    grid-template-columns: 1fr 2fr; 
+    gap: 15px 20px;
+  }
+  
+  .report-form label {
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+    margin-top: auto;
+    margin-bottom: 25px; 
+  }
+  
+  .report-buttons {
+    grid-column: span 2; 
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .report-buttons button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .report-buttons button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+  }
+  
+  .report-buttons .report-cancel-button {
+    border-radius: 5px;
+    background-color: #f44336;
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    margin-left: 15px;
+  }
+  
+  .report-buttons .report-cancel-button:hover {
+    background-color: #d32f2f;
+    transform: scale(1.05);
+  }
+  
+    .report-container {
+      margin-top: -80px;
+      width: 100%; 
+      padding: 15px; 
+      margin-left: 5px;
+    }
+  
+    .report-form {
+      grid-template-columns: 1fr; 
+      gap: 10px; 
+    }
+  
+    .report-form label {
+      font-size: 12px; 
+      margin-bottom: 10px; 
+    }
+  
+    .report-buttons {
+      grid-column: span 2; 
+      flex-direction: column; 
+    }
+  
+    .report-buttons button {
+      width: 100%; 
+      margin-bottom: 10px; 
+    }
+  
+    .report-buttons .report-cancel-button {
+      text-align: center;
+      width: 100%; 
+      margin-left: 0; 
+    
+  }
+
+  .footer-dashboard {
+    margin-top: 0px;
+    font-size: 14px;
+  }
+
+  .footer-laporan {
+    margin-top: -70px;
     font-size: 14px;
   }
 }

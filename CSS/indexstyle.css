@@ -17,7 +17,7 @@ header {
     justify-content: space-between;
     align-items: center;
     background-color: white;
-    padding: 20px;
+    padding: 15px 50px;
 }
 .logo {
     display: flex;
@@ -35,30 +35,6 @@ header {
     color: #1D71D3;
 }
 
-.nav-logo {
-    width: 25px;
-    height: auto;
-    margin-right: 7px;
-    vertical-align: -3px;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-nav ul li a {
-    font-family: 'Jost', sans-serif;
-    font-weight: bold;
-    color: #1D71D3;
-    text-decoration: none;
-    font-size: 18px;
-    padding: 20px;
-}
-nav a:hover {
-    text-decoration: underline;
-  }
 .auth-buttons {
     display: flex;
     gap: 10px;
@@ -71,6 +47,15 @@ button {
     font-size: 16px;
 }
 
+.home {
+    font-family: 'Jost', sans-serif;
+    font-weight: bold;
+    background-color: white;
+    color: #1D71D3;
+}
+.home:hover {
+    color: #4a90e2;
+}
 .sign-up {
     font-family: 'Jost', sans-serif;
     font-weight: bold;
@@ -79,67 +64,74 @@ button {
     border: 2px solid #1D71D3;
     border-radius: 5px;
 }
+.sign-up:hover {
+    color: #4a90e2;
+    border-color: #4a90e2;
+}
 
 .sign-in {
     font-family: 'Jost', sans-serif;
     font-weight: bold;
     background-color: #1D71D3;
     color: white;
+    border: 2px solid #fff;
     border-radius: 5px;
+}
+.sign-in:hover {
+    background-color: #4a90e2;
 }
 
 main {
-    padding: 50px;
-}
-
+    padding-top: 50px;
+    padding-left:50px;
+    }
 .hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     text-align: left;
 }
 
-.hero h1 {
-    font-size: 40px;
-    margin-bottom: 20px;
+.text-content {
+    max-width: 100%;
 }
 
-.highlight {
-    color: #f1f1f1;
-    font-weight: bold;
+.hero h1 {
+    margin-top: -20px;
+    font-size: 50px;
+    margin-bottom: 20px;
+    line-height: 1.15;
 }
+
 
 .hero p {
-    font-size: 18px;
+    font-size: 27px;
     margin-bottom: 20px;
 }
 
 .hero h2 {
-    font-size: 32px;
+    font-size: 42px;
     font-weight: bold;
 }
 
-.devices {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 0px;
-    margin-top: -360px;
-    margin-left: auto;
-    margin-right: -50px;
+.gambar {
+    flex-shrink: 0;
+    margin-left: 20px;
+    margin-top: 40px;
 }
 
-.device {
+.gambar img {
     max-width: 100%;
     height: auto;
 }
 
-.phone {
-    width: 150px;
-}
-
-.tablet {
-    width: 450px;
-}
-
-/* Responsiveness for iPhone 14 Pro Max */
+footer {
+    font-family: 'Jost', sans-serif;
+    text-align: center;
+    font-weight: bold;
+    color: #000000;
+  margin-top:120px;
+  }
 @media (max-width: 414px) {
     header {
         flex-direction: column;
@@ -161,25 +153,10 @@ main {
         margin-top: 10px;
     }
 
-    nav ul {
-        flex-direction: row;
-        justify-content: center;
-        gap: 10px;
-        padding: 0;
-        align-items: center;
-        width: auto;
-    }
-
-    nav ul li a {
-        padding: 10px;
-        font-size: 16px;
-        text-align: center;
-    }
-
-    .auth-buttons {
+       .auth-buttons {
         justify-content: center;
         width: 100%;
-        margin-top: 10px;
+        margin-top: 20px;
     }
 
     .auth-buttons button {
@@ -187,26 +164,45 @@ main {
         margin: 0 5px;
         text-align: center;
     }
-
-    .hero h1 {
-        font-size: 28px;
+    main{
+        padding-left: 20px;
+        padding-top: 50px;
     }
 
-    .hero h2 {
-        font-size: 22px;
+    .hero {
+        flex-direction: column; 
+        align-items: flex-start; 
+    }
+    .hero h1 {
+        font-size: 28px; 
+        margin-bottom: 16px;
+      }
+      .hero h2 {
+        font-size: 24px; 
+        font-weight: bold;
     }
 
     .hero p {
-        font-size: 16px;
+        font-size: 16px; 
+        margin-bottom: 16px;
+    }
+    .line-break {
+        display: none; 
     }
 
-    .devices {
-        flex-direction: column;
-        margin-top: 20px;
-        align-items: center;
+    .text-content {
+        max-width: 100%; 
     }
 
-    .phone, .tablet {
-        display: none;
+    .gambar {
+        margin-left: 0; 
+        margin-top: 20px; 
+    }
+
+    .gambar img {
+        width: 100%;
+    }
+    footer {
+        font-size: 14px;
     }
 }
