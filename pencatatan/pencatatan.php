@@ -76,25 +76,32 @@ $result = mysqli_stmt_get_result($stmt);
                 <th>Aksi</th>
                 <th>Hasil Keuangan</th>
             </tr>
-            <?php while ($row = mysqli_fetch_assoc($result)): ?>
-            <tr>
-                <td><?php echo htmlspecialchars($row['username']); ?></td>
-                <td><?php echo htmlspecialchars($row['tanggal']); ?></td>
-                <td>Rp. <?php echo number_format($row['pendapatan'], 0, ',', '.'); ?></td>
-                <td>Rp. <?php echo number_format($row['pengeluaran'], 0, ',', '.'); ?></td>
-                <td>Rp. <?php echo number_format($row['kewajiban'], 0, ',', '.'); ?></td>
-                <td class="action-buttons">
-                    <a href="pencatatan-edit.php?id_laporan=<?php echo $row['id_laporan']; ?>" class="edit-button">Edit</a>
-                    <form action="pencatatan-hapus.php" method="post" style="display: inline;">
-                        <input type="hidden" name="id_laporan" value="<?php echo htmlspecialchars($row['id_laporan']); ?>">
-                        <button type="submit" id="delete-button">Delete</button>
-                    </form>
-                </td>
-                <td class="laporan">
+            <?php if (mysqli_num_rows($result) > 0): ?>
+    <?php while ($row = mysqli_fetch_assoc($result)): ?>
+        <tr>
+            <td><?php echo htmlspecialchars($row['username']); ?></td>
+            <td><?php echo htmlspecialchars($row['tanggal']); ?></td>
+            <td>Rp. <?php echo number_format($row['pendapatan'], 0, ',', '.'); ?></td>
+            <td>Rp. <?php echo number_format($row['pengeluaran'], 0, ',', '.'); ?></td>
+            <td>Rp. <?php echo number_format($row['kewajiban'], 0, ',', '.'); ?></td>
+            <td class="action-buttons">
+                <a href="pencatatan-edit.php?id_laporan=<?php echo $row['id_laporan']; ?>" class="edit-button">Edit</a>
+                <form action="pencatatan-hapus.php" method="post" style="display: inline;">
+                    <input type="hidden" name="id_laporan" value="<?php echo htmlspecialchars($row['id_laporan']); ?>">
+                    <button type="submit" id="delete-button">Delete</button>
+                </form>
+            </td>
+            <td class="laporan">
                 <a href="../laporan/laporan-entry.php?id_laporan=<?php echo $row['id_laporan']; ?>" class="detail-button">Detail</a>
-                </td>
-            </tr>
-            <?php endwhile; ?>
+            </td>
+        </tr>
+    <?php endwhile; ?>
+<?php else: ?>
+    <tr>
+        <td colspan="7" style="text-align: center;">Tidak ada data</td>
+    </tr>
+<?php endif; ?>
+
         </table>
     </div>
 

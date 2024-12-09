@@ -82,7 +82,6 @@ nav a:hover {
   font-size: 28px;
 }
 
-
 main {
   display: flex;
   justify-content: center;
@@ -111,72 +110,87 @@ main {
 }
 
 .riwayat th {
-  padding: 13px;
+  padding: 10px;
   text-align: center;
   background-color: aquamarine;
 }
 
 .riwayat td {
-  padding: 13px;
+  padding: 10px;
   text-align: center;
   background-color: white;
 }
 
 .action-buttons {
   display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 15px;
+}
+
+button.edit-button,
+button.delete-button {
+  font-weight: bold;
+  margin: 4px 0px;
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s, transform 0.2s;
+  cursor: pointer;
+  height: 35px;
+  min-width: 100px;
+  display: flex;
   justify-content: center;
   align-items: center;
-  gap: 30px;
-  text-align: center;
 }
 
-.edit-button {
+button.edit-button {
   background-color: #4CAF50;
   color: white;
-  padding: 8px 16px;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s, transform 0.2s;
+  border: none;
 }
 
-.edit-button:hover {
+button.edit-button:hover {
   background-color: #45a049;
   transform: scale(1.05);
 }
 
-#delete-button {
-  background-color: #f44336;
-  color: white;
-  padding: 12.5px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
+button.delete-button {
+  background-color: #f44336 !important;
+  color: white !important;
+  border: none !important;
 }
 
-#delete-button:hover {
-  background-color: #d32f2f;
+button.delete-button:hover {
+  background-color: #d32f2f !important;
   transform: scale(1.05);
 }
 
-.delete-button:focus {
-  outline: none;
+form {
+  display: inline-block;
+  margin: 0;
 }
+
+form button {
+  margin: 0;
+  padding: 0;
+}
+
 .detail-button {
-  display: inline-block; 
+  display: inline-block;
   background-color: #1D71D3;
   color: white;
-  padding: 8px 16px;
+  padding: 6px 15px;
   text-align: center;
   text-decoration: none;
   border-radius: 5px;
-  transition: background-color 0.3s, transform 0.2s; 
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 .detail-button:hover {
-  background-color: #135F99; 
-  transform: scale(1.05); 
+  background-color: #135F99;
+  transform: scale(1.05);
 }
 
 .form-container {
@@ -185,69 +199,84 @@ main {
   border-radius: 10px;
   width: 650px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-top: -50px;
+  margin: 20px 0px;
 }
-.tambah-data-container {
+
+.tombol{
+  display:flex;
   margin-bottom: 20px;
   text-align: left;
+  gap:15px;
+
 }
 
-.tambah-data-button {
+.tambah-data-button,
+.cetak-data-button {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #4DFF4D;
-  color: #000;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
   text-decoration: none;
   border-radius: 5px;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
 }
+.tambah-data-button {
+  background-color: #4DFF4D;
+  color: #000;
+}
+
 
 .tambah-data-button:hover {
-  background-color: #01e001
+  background-color: #01e001;
 }
+.cetak-data-button {
+  background-color: #ff9800; /* Warna oranye untuk kontras dengan biru */
+  color: #000;
+}
+
+.cetak-data-button:hover {
+  background-color: #e68900; /* Warna oranye lebih gelap saat hover */
+}
+
 
 .form-buttons {
+  margin: 15px 0px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   gap: 30px;
-  margin-top: 10px;
-  transition: background-color 0.3s, transform 0.2s;
+  align-items: center;
 }
 
-button[type="submit"] {
+.btn-primary {
+  padding: 10px 20px;
+  font-size: 14px;
   font-weight: bold;
   background-color: #4CAF50;
   color: white;
   border: none;
-  padding: 8px 24px;
   border-radius: 5px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
+  transition: background-color 0.3s;
 }
 
-button[type="submit"]:hover {
+.btn-primary:hover {
   background-color: #45a049;
-  transform: scale(1.05);
 }
 
-.cancel-button {
+.btn-secondary {
+  padding: 6px 20px;
+  font-size: 14px;
+  font-weight: bold;
   background-color: #f44336;
   color: white;
-  text-decoration: none;
-  padding: 8px 16px;
+  border: none;
   border-radius: 5px;
-  font-size: 14px;
-  display: inline-block;
-  transition: background-color 0.3s, transform 0.2s;
+  text-decoration: none;
+  transition: background-color 0.3s;
 }
 
-.cancel-button:hover {
+.btn-secondary:hover {
   background-color: #d32f2f;
-  transform: scale(1.05);
 }
 
 h2 {
@@ -401,42 +430,32 @@ input {
   background-color: #d32f2f;
   transform: scale(1.05);
 }
-.data {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 20px;
-}
-
-.UMKM {
+#chartContainer {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  align-items: center;
+  margin: 20px auto;
+  padding: 10px;
+  max-width: 40%;
+  background-color: #f9f9f9; 
+  border: 1px solid #ddd;    
+  border-radius: 10px;       
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
-.row-container {
-  display: flex;
-  justify-content: center;
-  gap: 50px;
+#barChart {
+  max-width: 100%;
+  height: auto;
 }
 
-.dataContainer {
-  background-color: #f8f9fa;
-  border: 1px solid #ddd;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.chart-title {
+  padding: 5px;
   font-family: Arial, sans-serif;
-  max-width: 300px;
-  text-align: center;
-}
-
-.dataContainer p {
   font-size: 18px;
   font-weight: bold;
   color: #333;
-  margin: 0;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 
@@ -455,6 +474,56 @@ input {
   text-align: center;
   font-weight: bold;
   color: #000000;
+}
+h3 {
+  color: #fff;
+  font-size: 23px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+#form-hapus {
+  background-color: #1D71D3;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 400px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+/* Membuat heading lebih menarik */
+#form-hapus h4 {
+  font-size: 17px;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+#btn-hapus,
+#btn-batal{
+  background-color: #ffc107; 
+  color: black;
+  font-size:14px;
+  font-weight: bold;
+  padding: 10px 50px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#btn-batal{
+  background-color: #ffc107; 
+  color: black;
+  font-size:14px;
+  font-weight: bold;
+  padding: 8px 50px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+#btn-hapus:hover,
+#btn-batal:hover{
+  background-color: #ff9800;
 }
 
 @media (max-width: 414px) {

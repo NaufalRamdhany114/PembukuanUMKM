@@ -29,7 +29,6 @@ $query = "
     GROUP BY tb_umkm.id_umkm
 ";
 
-
 $stmt = mysqli_prepare($conn, $query);
 mysqli_stmt_bind_param($stmt, 's', $userName);
 mysqli_stmt_execute($stmt);
@@ -78,22 +77,25 @@ $result = mysqli_stmt_get_result($stmt);
         <th>Pengeluaran</th>
         <th>Kewajiban</th>
         <th>Status Keuangan</th>
-      </tr>
-    <?php while ($row = mysqli_fetch_assoc($result)): ?>
-    <tr>
-        <td><?php echo htmlspecialchars($row['nama_umkm']); ?></td>
-        <td><?php echo htmlspecialchars($row['alamat']); ?></td>
-        <td>Rp. <?php echo number_format($row['pendapatan'], 0, ',', '.'); ?></td>
-        <td>Rp. <?php echo number_format($row['pengeluaran'], 0, ',', '.'); ?></td>
-        <td>Rp. <?php echo number_format($row['kewajiban'], 0, ',', '.'); ?></td>
-        <td><?php echo htmlspecialchars($row['status_keuangan']); ?></td>
-
     </tr>
-    <?php endwhile; ?>
-</table>
-
+    <?php if (mysqli_num_rows($result) > 0): ?>
+        <?php while ($row = mysqli_fetch_assoc($result)): ?>
+        <tr>
+            <td><?php echo htmlspecialchars($row['nama_umkm']); ?></td>
+            <td><?php echo htmlspecialchars($row['alamat']); ?></td>
+            <td>Rp. <?php echo number_format($row['pendapatan'], 0, ',', '.'); ?></td>
+            <td>Rp. <?php echo number_format($row['pengeluaran'], 0, ',', '.'); ?></td>
+            <td>Rp. <?php echo number_format($row['kewajiban'], 0, ',', '.'); ?></td>
+            <td><?php echo htmlspecialchars($row['status_keuangan']); ?></td>
+        </tr>
+        <?php endwhile; ?>
+    <?php else: ?>
+        <tr>
+            <td colspan="6" style="text-align: center;">Tidak ada data</td>
+        </tr>
+    <?php endif; ?>
+    </table>
     </div>
-
 
 <script>
 function showAlert(message, type = "success") {
@@ -122,7 +124,6 @@ document.addEventListener("DOMContentLoaded", function () {
         window.history.replaceState({}, document.title, newUrl);
     }
 });
-
 </script>
 </body>
 </html>

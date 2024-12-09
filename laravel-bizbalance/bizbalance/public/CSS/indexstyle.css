@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Jost', sans-serif;
+    font-weight: bold;
+    background-color: #1D71D3;
+    color: white;
+    line-height: 1.6;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 15px 50px;
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1D71D3;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.home {
+    font-family: 'Jost', sans-serif;
+    font-weight: bold;
+    background-color: white;
+    color: #1D71D3;
+}
+.home:hover {
+    color: #4a90e2;
+}
+.sign-up {
+    font-family: 'Jost', sans-serif;
+    font-weight: bold;
+    background-color: white;
+    color: #1D71D3;
+    border: 2px solid #1D71D3;
+    border-radius: 5px;
+}
+.sign-up:hover {
+    color: #4a90e2;
+    border-color: #4a90e2;
+}
+
+.sign-in {
+    font-family: 'Jost', sans-serif;
+    font-weight: bold;
+    background-color: #1D71D3;
+    color: white;
+    border: 2px solid #fff;
+    border-radius: 5px;
+}
+.sign-in:hover {
+    background-color: #4a90e2;
+}
+
+main {
+    padding-top: 50px;
+    padding-left:50px;
+    }
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+}
+
+.text-content {
+    max-width: 100%;
+}
+
+.hero h1 {
+    margin-top: -20px;
+    font-size: 50px;
+    margin-bottom: 20px;
+    line-height: 1.15;
+}
+
+
+.hero p {
+    font-size: 27px;
+    margin-bottom: 20px;
+}
+
+.hero h2 {
+    font-size: 42px;
+    font-weight: bold;
+}
+
+.gambar {
+    flex-shrink: 0;
+    margin-left: 20px;
+    margin-top: 40px;
+}
+
+.gambar img {
+    max-width: 100%;
+    height: auto;
+}
+
+footer {
+    font-family: 'Jost', sans-serif;
+    text-align: center;
+    font-weight: bold;
+    color: #000000;
+  margin-top:120px;
+  }
+@media (max-width: 414px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .logo span {
+        font-size: 22px;
+    }
+
+    nav {
+        width: 100%;
+        max-width: 430px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+       .auth-buttons {
+        justify-content: center;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .auth-buttons button {
+        width: 100%;
+        margin: 0 5px;
+        text-align: center;
+    }
+    main{
+        padding-left: 20px;
+        padding-top: 50px;
+    }
+
+    .hero {
+        flex-direction: column; 
+        align-items: flex-start; 
+    }
+    .hero h1 {
+        font-size: 28px; 
+        margin-bottom: 16px;
+      }
+      .hero h2 {
+        font-size: 24px; 
+        font-weight: bold;
+    }
+
+    .hero p {
+        font-size: 16px; 
+        margin-bottom: 16px;
+    }
+    .line-break {
+        display: none; 
+    }
+
+    .text-content {
+        max-width: 100%; 
+    }
+
+    .gambar {
+        margin-left: 0; 
+        margin-top: 20px; 
+    }
+
+    .gambar img {
+        width: 100%;
+    }
+    footer {
+        font-size: 14px;
+    }
+}
